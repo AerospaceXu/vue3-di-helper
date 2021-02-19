@@ -2,6 +2,16 @@
 
 帮助您快速完成带 ts 提示的 `provide/inject`。
 
+npm 地址：https://www.npmjs.com/package/vue3-di-helper
+
+使用方法：
+
+```bash
+npm i vue3-di-helper
+# 或者
+yarn add vue3-di-helper
+```
+
 提供的方法：
 
 1. `provide`
