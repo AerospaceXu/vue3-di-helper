@@ -1,2 +1,3 @@
-import { ServiceType } from "./service.type";
-export declare function provide<T>(Service: ServiceType<T>): void;
+export declare function provide<T>(Service: {
+    new (...args: any[]): T;
+}): void;

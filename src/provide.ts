@@ -1,11 +1,13 @@
-import { provide as vueProvide } from "vue";
+import { provide as vueProvide, InjectionKey } from "vue";
 
-import { ServiceType } from "./service.type";
+import { injectKeysHash } from "./inject-keys-hash";
 
-import { createInjectKey } from "./create-inject-key";
-
-export function provide<T>(Service: ServiceType<T>) {
-  const key = createInjectKey();
-  Service.INJECT_KEY = key;
+export function provide<T>(Service: { new (...args: any[]): T }): void {
+  if (injectKeysHash.get(Service)) {
+    console.warn("Please do not provide one service repeatedly!!!");
+    return;
+  }
+  const key: InjectionKey<T> = Symbol();
+  injectKeysHash.set(Service, key);
   vueProvide(key, new Service());
 }

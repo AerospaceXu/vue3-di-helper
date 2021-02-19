@@ -1,2 +1,3 @@
-import { ServiceType } from "./service.type";
-export declare function inject<T>(Service: ServiceType<T>): T;
+export declare function inject<T>(Service: {
+    new (...args: any[]): T;
+}): T;

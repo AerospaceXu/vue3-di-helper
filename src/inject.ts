@@ -1,11 +1,12 @@
 import { inject as vueInject } from "vue";
 
-import { ServiceType } from "./service.type";
+import { injectKeysHash } from "./inject-keys-hash";
 
-export function inject<T>(Service: ServiceType<T>): T {
-  const service = vueInject<T>(Service.INJECT_KEY);
-  if (!service) {
+export function inject<T>(Service: { new (...args: any[]): T }): T {
+  const key = injectKeysHash.get(Service);
+  if (!key) {
     console.error("You have to provide service first!!!");
   }
-  return service!;
+  const service = vueInject<T>(key!)!;
+  return service;
 }
