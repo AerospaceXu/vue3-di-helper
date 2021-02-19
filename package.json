@@ -1,6 +1,6 @@
 {
   "name": "vue3-di-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "help vue3 DI",
   "main": "dist/index.js",
   "author": "AerospaceXu",
