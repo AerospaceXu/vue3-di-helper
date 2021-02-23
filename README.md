@@ -1,6 +1,6 @@
 # vue3-di-helper
 
-帮助您快速完成带 ts 提示的 `provide/inject`。
+帮助您快速完成带 ts 提示的 `provide/inject`。（对标 Angular 的 service，且也只支持传入 class，最终生成单例服务）
 
 npm 地址：https://www.npmjs.com/package/vue3-di-helper
 
